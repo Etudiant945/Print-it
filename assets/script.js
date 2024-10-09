@@ -47,7 +47,6 @@ slides.forEach((_, index) => {
         updateSlider(currentSlide);
     });
 
-	
     dotsContainer.appendChild(dot);
 });
 
@@ -73,4 +72,16 @@ rightArrow.addEventListener('click', function() {
     console.log('Flèche droite cliquée');
     currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
     updateSlider(currentSlide);
+});
+
+// Changement automatique de diapositive toutes les 5 secondes
+setInterval(() => {
+    currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+    updateSlider(currentSlide);
+}, 5000);
+
+// Préchargement des images (optionnel)
+slides.forEach(slide => {
+    const img = new Image();
+    img.src = `./assets/images/slideshow/${slide.image}`;
 });
