@@ -47,6 +47,7 @@ slides.forEach((_, index) => {
         updateSlider(currentSlide);
     });
 
+	
     dotsContainer.appendChild(dot);
 });
 
