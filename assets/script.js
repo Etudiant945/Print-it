@@ -60,7 +60,6 @@ function updateDots(index) {
 
 // Ajouter un event listener pour la flèche gauche
 leftArrow.addEventListener('click', function() {
-    alert('Vous avez cliqué sur la flèche gauche !');
     console.log('Flèche gauche cliquée');
     currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
     updateSlider(currentSlide);
@@ -68,17 +67,11 @@ leftArrow.addEventListener('click', function() {
 
 // Ajouter un event listener pour la flèche droite
 rightArrow.addEventListener('click', function() {
-    alert('Vous avez cliqué sur la flèche droite !');
     console.log('Flèche droite cliquée');
     currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
     updateSlider(currentSlide);
 });
 
-// Changement automatique de diapositive toutes les 5 secondes
-setInterval(() => {
-    currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
-    updateSlider(currentSlide);
-}, 5000);
 
 // Préchargement des images (optionnel)
 slides.forEach(slide => {
